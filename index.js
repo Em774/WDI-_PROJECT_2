@@ -1,5 +1,8 @@
 const express        = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const mongoose       = require('mongoose');
+mongoose.Promise     = require('bluebird');
+mongoose.connect(db);
 const { port, db }   = require('./config/env');
 const routes         = require('./config/routes');
 const app            = express();

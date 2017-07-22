@@ -1,3 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: blue;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+h1, li, a {
+  margin: 0 auto;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;;
+}
+
+a, button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+}
+
+.each {
+  margin: 0 auto;
+  margin-bottom: 35px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #000;
+  width: 200px;
+  text-align: center;
+}
+
+.new, .edit {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+label {
+  margin-right: 15px;
 }

@@ -1,0 +1,15 @@
+<h1>Edit your trip</h1>
+
+<form class="edit" action="/trips/<%= trip.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%= trip.name %>">
+  </div>
+  <div>
+    <label for="startDate">Start date</label>
+    <input type="text" name="startDate" value="<%= trip.startDate %>">
+  </div>
+  <button>Add</button>
+  <a href="/trips/<%= trip.id %>">Back</a>
+</form>

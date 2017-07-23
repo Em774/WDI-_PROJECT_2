@@ -1,8 +1,9 @@
 <h1><%= trip.name%></h1>
 
 <ul>
-  <a href="#"><li>Add new destination</li></a>
-  <li>Start date: <%= trip.startDate %>
+  <a href="/destinations/new"><li>Add new destination</li></a>
+
+  <li>Start date: <%= trip.startDate %></li>
 </ul>
 
 <a href="/trips/<%= trip.id %>/edit">Edit</a>

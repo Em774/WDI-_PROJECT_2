@@ -1,6 +1,7 @@
-<h1>Destinations</h1>
+<h1><%= trip.name %></h1>
+<h3>Add a destination</h3>
 
-<form class="new" action="" method="post">
+<form class="new" action="/trips/<%= trip.id %>" method="post">
   <div>
     <label for="name">Name</label>
     <input type="text" name="name">
@@ -24,4 +25,4 @@
   <button>Add</button>
 </form>
 
-<a href="/trips">Back</a>
+<a href="/trips/<%= trip.id%>">Back</a>

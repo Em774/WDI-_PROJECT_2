@@ -21,6 +21,8 @@ function tripsCreate(req, res, next) {
 function tripsShow(req, res, next) {
   Trip
   .findById(req.params.id)
+  .populate('destinations')
+  .exec()
   .then((trip) => {
     if (!trip) return res.status(404);
     res.render('trips/show', {trip});

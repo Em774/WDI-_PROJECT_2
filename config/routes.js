@@ -26,7 +26,7 @@ router.route('/trips/:id')
 router.route('/trips/:id/edit')
   .get(trips.edit);
 
-router.route('/destinations/new')
+router.route('/trips/:id/destinations/new')
   .get(destinations.new);
 
 router.route('/register')

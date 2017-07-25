@@ -1,11 +1,17 @@
 <h1><%= trip.name%></h1>
 
 <ul>
-  <a href="/destinations/new"><li>Add new destination</li></a>
-
+  <a href="/trips/<%= trip._id %>/destinations/new"><li>Add new destination</li></a>
+<% if (trip.destinations[0]) { %>
+  <ul>
+<% trip.destinations.forEach(tri => { %>
+    <li><%= tri.name %></li>
+  <% }); %>
+  </ul>
+<% } %>
   <li>Start date: <%= trip.startDate %></li>
 </ul>
 
-<a href="/trips/<%= trip.id %>/edit">Edit</a>
+<a href="/trips/<%= trip._id %>/edit">Edit</a>
 
 <a href="/trips">Back</a>

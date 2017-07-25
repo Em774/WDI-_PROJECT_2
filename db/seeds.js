@@ -1,5 +1,6 @@
 const mongoose   = require('mongoose');
-mongoose.Promise = require('bluebird');
+const Promise = require('bluebird');
+mongoose.Promise = Promise;
 
 const db = process.env.MONGODB_URI || 'mongodb://localhost/wdi-project-2';
 mongoose.connect(db);
@@ -21,33 +22,32 @@ User
 }])
 .then((users) => {
   console.log(`${users.length} users created!`);
-
-
   return Trip
-  .create([{
+  .create({
     name: 'Europe 2017',
     startDate: '10 Jan 2017'
-  }])
-  .then((trips) => {
-    console.log(`${trips.length} trips created`);
-
-
-    return Destination
-    .create([{
+  })
+  .then((trip) => {
+    console.log(`${trip} was created`);
+    return Destination.create({
       name: 'Eiffel Tower',
       city: 'Paris',
       country: 'France',
       rating: '5',
-      notes: 'this is Paris'
-    }]);
+      notes: 'this is Paris',
+      trip: trip._id
+    })
+    .then((destination) => {
+      console.log(`${destination} destination was created`);
+      trip.destinations.push(destination);
+      return trip.save();
+    });
+  })
+
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    mongoose.connection.close();
   });
-})
-.then((destinations) => {
-  console.log(`${destinations.length} destinations created!`);
-})
-.catch((err) => {
-  console.log(err);
-})
-.finally(() => {
-  mongoose.connection.close();
 });

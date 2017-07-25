@@ -2,14 +2,16 @@
 
 <a href="/trips/new">Add a new trip</a>
 
+<% const reversed = trips.reverse() %>
+
 
 <ul>
-  <% trips.forEach((trip) => { %>
+  <% reversed.forEach((trip) => { %>
     <div class="each">
-    <a href="/trips/<%= trip.id%>" <li>Name: <%= trip.name%></li></a>
+    <a href="/trips/<%= trip._id %>" <li>Name: <%= trip.name%></li></a>
     <li>Start date: <%= trip.startDate%></li>
 
-    <form class="" action="/trips/<%= trip.id %>" method="post">
+    <form class="" action="/trips/<%= trip._id %>" method="post">
       <input type="hidden" name="_method" value="DELETE">
       <button>Delete</button>
     </form>

@@ -1,0 +1,26 @@
+<h1>Edit your destination</h1>
+
+<form class="edit" action="/trips/<%= destination.trip %>/destinations/<%= destination.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%= destination.name %>">
+  </div>
+  <div>
+    <label for="city">City</label>
+    <input type="text" name="city" value="<%= destination.city %>">
+  </div>
+  <div>
+    <label for="country">Country</label>
+    <input type="text" name="country" value="<%= destination.country %>">
+  </div>
+  <div>
+    <label for="rating">Rating</label>
+    <input type="text" name="rating" value="<%= destination.rating %>">
+  </div>
+  <div>
+    <label for="notes">Notes</label>
+    <input type="text" name="notes" value="<%= destination.notes %>">
+  </div>
+  <button>Add</button>
+</form>

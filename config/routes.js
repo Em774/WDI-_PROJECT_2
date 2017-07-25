@@ -29,6 +29,14 @@ router.route('/trips/:id/edit')
 router.route('/trips/:id/destinations/new')
   .get(destinations.new);
 
+router.route('/trips/:tripId/destinations/:destinationId')
+  .get(destinations.show)
+  .put(destinations.update)
+  .delete(destinations.delete);
+
+router.route('/trips/:tripId/destinations/:destinationId/edit')
+  .get(destinations.edit);
+
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);

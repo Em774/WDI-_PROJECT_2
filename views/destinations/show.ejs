@@ -1,0 +1,18 @@
+<ul>
+
+  <h1><%= destination.name %></h1>
+  <li>City: <%= destination.city %></li>
+  <li>Country: <%= destination.country %></li>
+  <li>Rating: <%= destination.rating %></li>
+  <li>Notes: <%= destination.notes %></li>
+
+<form class="" action="/trips/<%= destination.trip %>/destinations/<%= destination.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="btn btn-primary" type="submit" value="Delete">
+</form>
+
+<a href="/trips/<%= destination.trip %>/destinations/<%= destination.id%>/edit">Edit</a>
+
+</ul>
+
+<a href="/trips/<%= destination.trip %>">Back</a>

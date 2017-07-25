@@ -4,8 +4,12 @@
   <a href="/trips/<%= trip._id %>/destinations/new"><li>Add new destination</li></a>
 <% if (trip.destinations[0]) { %>
   <ul>
-<% trip.destinations.forEach(tri => { %>
-    <li><%= tri.name %></li>
+
+<% const reversed = trip.destinations.reverse() %>
+
+<% reversed.forEach(destination => { %>
+
+    <a href="/trips/<%= trip._id%>/destinations/<%= destination.id%>"><li><%= destination.name %></li></a>
   <% }); %>
   </ul>
 <% } %>

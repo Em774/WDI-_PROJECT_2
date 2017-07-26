@@ -2,12 +2,13 @@
 <h3>Add a destination</h3>
 
 <form class="new" action="/trips/<%= trip.id %>" method="post">
-  <label for="">Add images to your destinations</label>
-  <input type="file" onchange="previewFile()"><br>
-  <img src="" height="200" class="inputImage">
   <div>
     <label for="name">Name</label>
     <input type="text" name="name">
+  </div>
+  <div>
+    <label for="image">Image</label>
+    <input type="text" name="image">
   </div>
   <div>
     <label for="city">City</label>
@@ -23,7 +24,7 @@
   </div>
   <div>
     <label for="notes">Notes</label>
-    <input type="text" name="notes">
+    <textarea name="notes" rows="4" cols="30"></textarea>
   </div>
   <button>Add</button>
 </form>

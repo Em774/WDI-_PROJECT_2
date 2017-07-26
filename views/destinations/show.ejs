@@ -1,6 +1,7 @@
 <ul>
 
   <h1><%= destination.name %></h1>
+  <li><img src="<%= destination.image %>" alt=""></li>
   <li>City: <%= destination.city %></li>
   <li>Country: <%= destination.country %></li>
   <li>Rating: <%= destination.rating %></li>
@@ -11,8 +12,11 @@
   <input class="btn btn-primary" type="submit" value="Delete">
 </form>
 
-<a href="/trips/<%= destination.trip %>/destinations/<%= destination.id%>/edit">Edit</a>
+<a href="/trips/<%= destination.trip %>/destinations/<%= destination.id%>/edit" class="btn btn-primary">Edit</a>
 
 </ul>
 
-<a href="/trips/<%= destination.trip %>">Back</a>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+
+<a href="/trips/<%= destination.trip %>" class="btn btn-primary">Back</a>

@@ -20,7 +20,9 @@
   </div>
   <div>
     <label for="notes">Notes</label>
-    <input type="text" name="notes" value="<%= destination.notes %>">
+    <textarea name="notes" rows="4" cols="30"><%= destination.notes %></textarea>
   </div>
   <button>Add</button>
 </form>
+
+<a href="/trips/<%= destination.trip %>/destinations/<%= destination.id %>">Back</a>

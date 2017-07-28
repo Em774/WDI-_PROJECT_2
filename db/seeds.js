@@ -15,7 +15,7 @@ Destination.collection.drop();
 
 User
 .create([{
-  username: 'emilie',
+  username: 'Emilie',
   email: 'emilie@ga.co',
   password: 'password',
   passwordConfirmation: 'password'

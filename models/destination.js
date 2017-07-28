@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const destinationSchema = new mongoose.Schema({
   name: { type: String, required: true},
   image: { type: String},
-  city: { type: String},
-  country: { type: String},
-  rating: { type: String},
+  lat: { type: String},
+  long: { type: String},
+  date: { type: String},
   notes: { type: String},
   trip: {type: mongoose.Schema.ObjectId, ref: 'Trip'}
 });

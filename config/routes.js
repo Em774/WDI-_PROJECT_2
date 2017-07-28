@@ -6,6 +6,17 @@ const trips         = require('../controllers/trips');
 const destinations  = require('../controllers/destinations');
 const registrations = require('../controllers/registrations');
 const sessions      = require('../controllers/sessions');
+const users         = require('../controllers/users');
+
+function secureRoute(req, res, next) {
+  if (!req.session.userId) {
+    return req.session.regenerate(() => {
+      res.redirect('/login');
+    });
+  }
+  return next();
+}
+
 
 router.route('/')
   .get(statics.homepage);
@@ -15,7 +26,7 @@ router.route('/trips')
   .post(trips.create);
 
 router.route('/trips/new')
-    .get(trips.new);
+    .get(secureRoute, trips.new);
 
 router.route('/trips/:id')
   .get(trips.show)
@@ -48,5 +59,7 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
+router.route('/users/:id')
+  .get(users.show);
 
 module.exports = router;

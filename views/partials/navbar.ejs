@@ -1,25 +1,52 @@
 <nav class="navbar navbar-default transparent">
-  <div class="container-fluid">
-    <div class="navbar-header">
-<div class="row">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="row">
 
-      <% if (locals.isLoggedIn) {%>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">LogOut</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><%= locals.user.username%></a>
-        </li>
-        <% } else {%>
-          <li class="nav-item">
-            <a class="btn btn-default navbar-btn" href="/login">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-default navbar-btn" href="/register">Register</a>
-          </li>
-      <% } %>
+        <ul class="row">
 
-</div>
+          <% if (locals.isLoggedIn) {%>
+
+            <div class="col-lg-9">
+              <a href="/" class="navbar-brand" >Travel Timeline
+              </a>
+            </div>
+
+            <li>
+            <div class="col-lg-1">
+            <a class="nav-link white" style=" border-right: 1px solid #fff; height: 30px; margin-top: 5px;" href="/logout">Logout</a>
+            </div>
+            </li>
+
+            <li>
+            <div class="col-lg-2" style="margin-top: 5px;">
+            <a class="nav-link white" href="/users/<%= user._id%>"><%= locals.user.username%>'s trips</a>
+            </div>
+            </li>
+
+            <% } else {%>
+
+
+              <div class="col-lg-9">
+                <a class="navbar-brand" href="/"><img style="	width: 40px;" src="images/whitelogo.png" alt="logo">
+                </a>
+              </div>
+
+              <li >
+              <div class="col-lg-1" style=" border-right: 1px solid #fff; height: 30px; margin-top: 5px;">
+              <a class="navbar white" href="/login">Log In</a>
+              </div>
+              </li>
+
+              <li>
+              <div class="col-lg-2" style="margin-top: 5px;">
+              <a class="navbar white" href="/register">Register</a>
+              </div>
+              </li>
+              <% } %>
+            </ul>
+
+          </div>
         </div>
       </div>
     </nav>

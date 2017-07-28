@@ -1,21 +1,26 @@
-<h1><%= trip.name%></h1>
+<body class="trip-show-bg">
 
-<ul>
-  <a href="/trips/<%= trip._id %>/destinations/new"><li>Add new destination</li></a>
-<% if (trip.destinations[0]) { %>
-  <ul>
+  <h1 class="user-trips"><%= trip.name%></h1>
 
-<% const reversed = trip.destinations.reverse() %>
+  <% const reversed = trip.destinations.reverse() %>
 
-<% reversed.forEach(destination => { %>
+  <ul class="trips">
+    <a href="/trips/<%= trip._id %>/destinations/new" class="add-trip"><li>+</li></a>
+    <% if (trip.destinations[0]) { %>
 
-    <a href="/trips/<%= trip._id%>/destinations/<%= destination.id%>"><li><%= destination.name %></li></a>
-  <% }); %>
-  </ul>
-<% } %>
-  <li>Start date: <%= trip.startDate %></li>
-</ul>
+      <% reversed.forEach((destination) => { %>
+        <div class="each">
+        <a href="/trips/<%= trip._id%>/destinations/<%= destination.id%>" class="destination-name"><li class="destination-name"><%= destination.name %></li></a>
+        <li><%= trip.startDate %></li>
 
-<a href="/trips/<%= trip._id %>/edit">Edit</a>
+        <form class="" action="/trips/<%= destination.trip %>/destinations/<%= destination.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button class="btn trips-delete">X</button>
+        </form>
+        </div>
+        <% }) %>
+        <% } %>
+      </ul>
 
-<a href="/trips">Back</a>
+      <a href="/trips/<%= trip._id %>/edit" class="btn btn-primary">Edit</a>
+      <a href="/users/<%= user._id%>" class="btn btn-primary">Back</a>

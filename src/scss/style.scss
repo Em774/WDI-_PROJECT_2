@@ -1,3 +1,7 @@
+@font-face {
+    font-family: ;
+    src: url("path/GraublauWeb.otf") format("opentype");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,207 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
+}
+
+.navbar-default {
+  background-image: none;
+  background-color: rgba(0,0,0,0);
+  height: 20px;
+}
+
+.homepage-bg {
+  background: url("https://images.unsplash.com/photo-1456940645424-adda95a2af4c?dpr=2&auto=format&fit=crop&w=1080&h=675&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: 50%;
+  height: 980px;
+}
+
+.user-bg {
+  background: url("https://images.unsplash.com/photo-1431975071466-2c609dac5956?dpr=2&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.trip-new-bg {
+  background: url("https://images.unsplash.com/photo-1466854076813-4aa9ac0fc347?dpr=2&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.trip-show-bg {
+  background: url("https://images.unsplash.com/photo-1490952829757-cecd4b47bd88?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.add-destination-bg {
+  background: url("https://images.unsplash.com/photo-1485256888642-b40971984883?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.destination-show-bg {
+  background: url("https://images.unsplash.com/photo-1448814100339-234df1d4005d?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=");
+  background-position: center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.form-group {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.margin-auto {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.label {
+  color: #000;
+  font-size: 15px;
+  widht: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  margin-top: 40px;
+}
+
+.btn-primary {
+  background-image: none;
+  background-color: #093554;
+}
+
+.btn-primary:hover {
+  background-image: none;
+  background-color: rgba(255,255,255,0);
+  color: #fff;
+}
+
+.navbar-brand {
+  margin-left: 20px;
+  padding: 0;
+  width: 40px;
+  height: 100%;
+  color: #fff;
+}
+
+.col-lg-5, .col-lg-4, .col-lg-1, .col-lg-2 {
+  margin-right: 0;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+.enter, .white {
+  color: #fff;
+}
+
+.enter:hover {
+  color: #fff;
+}
+
+.header-trip {
+  color: #fff;
+  padding: 5px;
+  margin: 20px;
+}
+
+.trips {
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 8px;
+  padding: 5px 0;
+}
+
+.user-trips {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.addADestination {
+  margin-bottom: 20px;
+}
+
+
+.each {
+  margin: 0 auto;
+  margin-bottom: 35px;
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  color: #000;
+  background-color:rgba(255,255,255,0.3);
+}
+
+.trip-name {
+  color: #093554;
+  font-size: 24px;
+}
+
+.destination-name {
+  color: #093554;
+  font-size: 18px;
+}
+
+.trip-name:hover {
+  border: none;
+}
+
+.trips-delete {
+  position: absolute;
+  height: 25px;
+  font-size: 13px;
+  margin-top: -110px;
+  margin-left: -100px;
+  background-image: none;
+  background-color: #093554;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 5px;
+}
+
+.trips-delete:hover {
+  border: 1px solid #093554;
+  background-image: none;
+  background-color: rgba(0,0,0,0);
+  color: red;
+}
+
+.add-trip {
+  margin: 0;
+  position: absolute;
+  font-size: 20px;
+  width: 29px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 360px;
+  background-image: none;
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid #093554;
+  border-radius: 5px;
+  color: #093554;
+  padding: 0;
+}
+
+.add-trip:hover {
+  color: green;
+  box-shadow: 0px 0px 10px 3px rgba(25,194,81,1);
+}
+
+main {
+height: 100%;
 }
 
 h1, h3, li, a {
@@ -17,7 +221,6 @@ h1, h3, li, a {
 li {
   list-style-type: none;
   margin: 0;
-  padding: 5px;;
 }
 
 a, button, .logo-hp {
@@ -27,14 +230,8 @@ a, button, .logo-hp {
   padding: 5px;
 }
 
-.each {
-  margin: 0 auto;
-  margin-bottom: 35px;
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #000;
-  width: 200px;
-  text-align: center;
+a:link {
+  text-decoration: none;
 }
 
 .new, .edit, input {
@@ -111,10 +308,10 @@ a, button, .logo-hp {
   font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
-  margin-left: 12px;
+  margin: 0 auto;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 400px;
+  width: 200px;
 }
 
 #pac-input:focus {

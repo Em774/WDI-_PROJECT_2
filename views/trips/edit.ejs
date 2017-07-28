@@ -1,15 +1,17 @@
+<body class="trip-show-bg">
+
 <h1>Edit your trip</h1>
 
 <form class="edit" action="/trips/<%= trip.id%>" method="post">
   <input type="hidden" name="_method" value="put">
-  <div>
+  <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" name="name" value="<%= trip.name %>">
+    <input type="text" name="name" value="<%= trip.name %>" class="form-control">
   </div>
-  <div>
+  <div class="form-group">
     <label for="startDate">Start date</label>
-    <input type="text" name="startDate" value="<%= trip.startDate %>">
+    <input type="text" name="startDate" value="<%= trip.startDate %>" class="form-control">
   </div>
-  <button>Add</button>
-  <a href="/trips/<%= trip.id %>">Back</a>
+  <button class="btn btn-primary">Add</button>
 </form>
+<a href="/trips/<%= trip.id %>" class="btn btn-primary">Back</a>

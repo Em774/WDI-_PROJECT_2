@@ -1,9 +1,8 @@
-<body class="trips-bg">
+<body class="user-bg">
 
-<h1 class="header-trip">Trips</h1>
+<h1 class="user-trips"><%= user.username%>'s trips</h1>
 
-<% const reversed = trips.reverse() %>
-
+<% const reversed = user.trip.reverse() %>
 
 <ul class="trips">
   <a class="add-trip" href="/trips/new">+</a>
@@ -19,5 +18,3 @@
     </div>
 <%  }) %>
 </ul>
-
-<a href="/">Homepage</a>

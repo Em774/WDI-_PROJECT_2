@@ -1,6 +1,7 @@
 const Destination = require('../models/destination');
 const Trip        = require('../models/trip');
 
+
 function destinationsNew (req, res) {
   Trip
   .findById(req.params.id)
@@ -10,6 +11,7 @@ function destinationsNew (req, res) {
 }
 
 function destinationsCreate (req, res, next) {
+  console.log(req.body);
   Trip
   .findById(req.params.id)
   .then((trip) =>  {
@@ -70,6 +72,7 @@ function destinationsDelete(req, res, next) {
     destination.remove();
     destination.save();
     res.redirect(`/trips/${destination.trip}`);
+
   })
   .catch(next);
 }

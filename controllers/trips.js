@@ -1,4 +1,5 @@
 const Trip = require('../models/trip');
+const User = require('../models/user');
 
 function tripsIndex (req, res, next) {
   Trip
@@ -14,14 +15,23 @@ function tripsNew (req, res) {
 function tripsCreate(req, res, next) {
   Trip
   .create(req.body)
-  .then(() => res.redirect('/trips'))
+  .then(trip => {
+    User
+    .findById(req.session.userId)
+    .exec()
+    .then(user => {
+      user.trip.push(trip._id);
+      user.save();
+      res.redirect(`/users/${user._id}`);
+    });
+  })
   .catch(next);
 }
 
 function tripsShow(req, res, next) {
   Trip
   .findById(req.params.id)
-  .populate('destinations')
+  .populate('destinations createdBy')
   .exec()
   .then((trip) => {
     if (!trip) return res.status(404);
@@ -62,7 +72,7 @@ function tripsDelete(req, res, next) {
     if (!trip) res.status(404);
     return trip.remove();
   })
-  .then(() => res.redirect('/trips'))
+  .then(() => res.redirect(`/users/${res.locals.user.id}`))
   .catch(next);
 }
 

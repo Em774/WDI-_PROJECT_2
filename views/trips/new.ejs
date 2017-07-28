@@ -1,15 +1,17 @@
-<h1>Add a new trip</h1>
+<body class="trip-new-bg">
+
+<h1 class="user-trips">Add a new trip</h1>
 
 <form class="new" action="/trips" method="post">
-  <div class="input-field col s5" >
+  <div class="form-group" >
     <label for="name">Name</label>
-    <input type="text" name="name">
+    <input type="text" name="name" class="form-control">
   </div>
-  <div class="input-field">
+  <div class="form-group">
     <label for="startDate">Start date</label>
-    <input type="text" name="startDate">
+    <input type="text" name="startDate" class="form-control" placeholder="dd/mm/yyyy">
   </div>
-  <button>Submit</button>
+  <button class="btn btn-primary">Submit</button>
 </form>
 
-<a href="/trips">Back</a>
+<a href="/users/<%= user.id%>" class="btn btn-primary">Back</a>

@@ -1,6 +1,7 @@
 @font-face {
-    font-family: ;
-    src: url("path/GraublauWeb.otf") format("opentype");
+    font-family: HeroLight;
+    src: url('HeroLight.otf');
+}
 
 * {
   margin: 0;
@@ -10,6 +11,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .navbar-default {
@@ -21,8 +23,8 @@ body {
 .homepage-bg {
   background: url("https://images.unsplash.com/photo-1456940645424-adda95a2af4c?dpr=2&auto=format&fit=crop&w=1080&h=675&q=80&cs=tinysrgb&crop=");
   background-position: center no-repeat;
-  background-size: 50%;
-  height: 980px;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .user-bg {
@@ -47,7 +49,7 @@ body {
 }
 
 .add-destination-bg {
-  background: url("https://images.unsplash.com/photo-1485256888642-b40971984883?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  background: url("https://images.unsplash.com/photo-1466854076813-4aa9ac0fc347?dpr=2&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=");
   background-position: center no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -162,15 +164,51 @@ form {
 .destination-name {
   color: #093554;
   font-size: 18px;
+  position: absolute;
+  width: 160px;
+  margin-left: 5px;
+  text-align: center;
 }
 
 .trip-name:hover {
   border: none;
 }
 
+.destination-date {
+  color: #093554;
+  font-size: 15px;
+  position: absolute;
+  width: 160px;
+  text-align: center;
+  margin-top: 61px;
+  margin-left: 14px;
+}
+
+.tdelete {
+  position: absolute;
+  height: 25px;
+  width: 20px;
+  font-size: 13px;
+  margin-top: -46px;
+  margin-left: -100px;
+  background-image: none;
+  background-color: #093554;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.tdelete:hover {
+  border: 1px solid #093554;
+  background-image: none;
+  background-color: rgba(0,0,0,0);
+  color: red;
+}
+
 .trips-delete {
   position: absolute;
   height: 25px;
+  width: 20px;
   font-size: 13px;
   margin-top: -110px;
   margin-left: -100px;

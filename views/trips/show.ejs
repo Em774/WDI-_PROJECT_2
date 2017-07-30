@@ -11,11 +11,11 @@
       <% reversed.forEach((destination) => { %>
         <div class="each">
         <a href="/trips/<%= trip._id%>/destinations/<%= destination.id%>" class="destination-name"><li class="destination-name"><%= destination.name %></li></a>
-        <li><%= trip.startDate %></li>
+        <li class="destination-date"><%= trip.startDate %></li>
 
         <form class="" action="/trips/<%= destination.trip %>/destinations/<%= destination.id%>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button class="btn trips-delete">X</button>
+          <button class="btn tdelete">X</button>
         </form>
         </div>
         <% }) %>

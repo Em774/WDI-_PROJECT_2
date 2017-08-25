@@ -5,7 +5,7 @@
   <% const reversed = trip.destinations.reverse() %>
 
   <ul class="trips">
-    <a href="/trips/<%= trip._id %>/destinations/new" class="add-trip"><li>+</li></a>
+    <a href="/trips/<%= trip._id %>/destinations/new" class="aTrip"><li>+</li></a>
     <% if (trip.destinations[0]) { %>
 
       <% reversed.forEach((destination) => { %>

@@ -8,14 +8,26 @@ function init() {
   hoverlogo();
   appear();
   disappear();
+  // sortIt();
+}
+
+function sortIt() {
+  $( '#sortable' ).sortable();
+  $( '#sortable' ).disableSelection();
+  $('#sortable').save();
 }
 
 function initAutocomplete() {
   if (document.getElementById('map')) {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: placeCoordinates,
-      zoom: 13,
+      zoom: 9,
       mapTypeId: 'roadmap'
+    });
+
+    var marker = new google.maps.Marker({
+      map: map,
+      position: placeCoordinates
     });
   }
 
@@ -37,6 +49,9 @@ function initAutocomplete() {
     $('#lat').val(place.geometry.location.lat());
     $('#long').val(place.geometry.location.lng());
 
+    console.log(place.geometry.location.lat());
+    console.log(place.geometry.location.lng());
+
     return placeId;
   }
 
@@ -55,7 +70,7 @@ function initAutocomplete() {
       populateShow(place);
       var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: placeCoordinates
       });
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
@@ -88,14 +103,20 @@ function appear() {
   $('.about').hide();
   $('.logo-hp').on('click', function() {
     $('.logo-hp').hide();
-    $('.about').show();
+    setTimeout(function() {
+      $('.about').fadeIn(1000);
+    }, 500);
+
     $('.about').empty().append('<h1>Travel Timeline</h1><br> <p>Have you always wanted to be able to keep track of the trips you had and the places you visited? <br><br> Travel Timeline is the answer to your question. <br><br> Welcome to a website where you can create trips and keep track of the destinations you have been to. <br><br> Here you will be able to create from scratch a full trip itinerary, store the locations you plan to visit, create a diary with notes to remember the places you loved the most, add pictures and integrate all of it into in a timeline.<br><br> Travel Timeline is made by Emilie Dussaix, a web developer who is passionate about travel and organisation.<br> Made by a traveller for travellers.</p>');
   });
 }
 
 function disappear() {
   $('.about').on('click', function() {
-    $('.about').hide();
-    $('.logo-hp').show();
+    $('.about').fadeOut('slow');
+    setTimeout(function(){
+      $('.logo-hp').fadeIn();
+    }, 500);
+
   });
 }

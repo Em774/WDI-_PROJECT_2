@@ -226,6 +226,27 @@ form {
   color: red;
 }
 
+.aTrip {
+  margin: 0;
+  position: absolute;
+  font-size: 20px;
+  width: 29px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 357px;
+  background-image: none;
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid #093554;
+  border-radius: 5px;
+  color: #093554;
+  padding: 0;
+}
+
+.aTrip:hover {
+  color: green;
+  box-shadow: 0px 0px 10px 3px rgba(25,194,81,1);
+}
+
 .add-trip {
   margin: 0;
   position: absolute;
@@ -233,7 +254,7 @@ form {
   width: 29px;
   height: 30px;
   margin-top: 10px;
-  margin-left: 360px;
+  margin-left: 800px;
   background-image: none;
   background-color: rgba(255,255,255,0.3);
   border: 1px solid #093554;
@@ -365,4 +386,24 @@ a:link {
 }
 #target {
   width: 345px;
+}
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+#sortable li {
+  margin: 0 3px 3px 3px;
+  padding: 0.4em;
+  padding-left: 1.5em;
+  font-size: 1.4em;
+  height: 18px;
+}
+
+#sortable li span {
+  position: absolute;
+  margin-left: -1.3em;
 }
